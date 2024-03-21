@@ -1,0 +1,9 @@
+version: '1.0'
+
+# Database configuration
+database:
+  timeseries:
+    host: string # Host of the database
+    port: int # Port of the database
+    username: string # Username for the database
+    password: string # Password for the database

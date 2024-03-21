@@ -1,0 +1,7 @@
+version: '1.0'
+
+# Function configuration
+function:
+  - name: string # Name of the function
+    endpoint: string # URL (Uniform Resource Locator) of the function
+    description: string # Description of the function

@@ -1,0 +1,10 @@
+version: '1.0'
+
+# Unified Namespace (UNS) configuration
+uns:
+  name: string # Name of the UNS
+  timezone: string # Timezone of the UNS
+  region: string # Region of the UNS
+  topic_structure: 'version/site/area/line/cell/equipment/sensor/information_model/' # The structure of the MQTT topic
+  topic_standard: string # The standard of the MQTT topic
+  information_model: string # The information model used

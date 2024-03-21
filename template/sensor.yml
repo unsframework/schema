@@ -1,0 +1,6 @@
+version: '1.0'
+
+template_sensor: &template_sensor
+  information_model:
+    - item: # The name of the equipment, sub system, section, component etc.
+        item-value: float # a sensor of the, sub system, section, component etc.

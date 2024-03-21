@@ -1,0 +1,29 @@
+version: '1.0'
+
+site:
+  - name: string
+    id: string
+    location: string
+    description: string
+    area:
+      - name: string
+        id: string
+        location: string
+        description: string
+        line:
+          - name: Line US1
+            id: LIS1
+            location: string
+            description: string
+            cell:
+              - name: string
+                id: string
+                location: string
+                description: string
+                equipment:
+                  - id: string
+                    name: string
+                    <<: *template_equipment
+                    sensor:
+                      - id: string
+                        <<: *template_sensor

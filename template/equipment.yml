@@ -1,0 +1,30 @@
+version: '1.0'
+
+# Equipment and sensor templates
+template_equipment: &template_equipment
+  dataops:
+    normalization:
+      units: string # Units for normalization
+      scale: float # Scale for normalization
+      offset: float # Offset for normalization
+      method: string # Method for normalization
+      missing_values:
+        strategy: string # Strategy for handling missing values
+        fill_value: string # Fill value for missing values
+    transformation:
+      aggregation:
+        method: string # Method for aggregation
+        window: int # Window for aggregation
+        stride: int # Stride for aggregation
+      calculation:
+        operation: string # Operation for calculation
+        operands: list # Operands for calculation
+      filtering:
+        method: string # Method for filtering
+        parameters: list # Parameters for filtering
+      feature_extraction:
+        method: string # Method for feature extraction
+        parameters: list # Parameters for feature extraction
+      dimensionality_reduction:
+        method: string # Method for dimensionality reduction
+        number_of_dimensions: int # Number of dimensions for dimensionality reduction

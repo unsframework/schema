@@ -1,0 +1,8 @@
+version: '1.0'
+
+mqtt:
+  broker:
+    host: string # Host of the MQTT broker
+    port: int # Port of the MQTT broker
+    username: string # Username for the MQTT broker
+    password: string # Password for the MQTT broker

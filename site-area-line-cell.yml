@@ -1,0 +1,31 @@
+version: '1.0'
+
+# Site, area, line, cell, equipment and sensor definitions
+site:
+  - name: string # Name of the site
+    id: string # ID of the site
+    location: string # Location of the site
+    description: string # Description of the site
+    area:
+      - name: string # Name of the area
+        id: string # ID of the area
+        location: string # Location of the area
+        description: string # Description of the area
+        line:
+          - name: Line US1 # Name of the line
+            id: LIS1 # ID of the line
+            location: string # Location of the line
+            description: string # Description of the line
+            cell:
+              - name: string # Name of the cell
+                id: string # ID of the cell
+                location: string # Location of the cell
+                description: string # Description of the cell
+                equipment:
+                  - name: string # Name of the equipment
+                    id: string # ID of the equipment
+                    <<: *template_equipment # Reference to the equipment template
+                    sensor:
+                      - name: string # Name of the sensor
+                        id: string # ID of the sensor
+                        <<: *template_sensor # Reference to the sensor template

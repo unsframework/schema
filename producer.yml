@@ -1,0 +1,6 @@
+version: '1.0'
+
+producer:
+  - name: string # Name of the producer
+    endpoint: string # URL (Uniform Resource Locator) of the producer
+    description: string # Description of the producer

@@ -1,0 +1,107 @@
+# Version of the configuration
+version: '1.0'
+
+# Unified Namespace (UNS) configuration
+uns:
+  name: string # Name of the UNS
+  timezone: string # Timezone of the UNS
+  region: string # Region of the UNS
+  topic_structure: 'version/site/area/line/cell/equipment/sensor/information_model/' # The structure of the MQTT topic
+  topic_standard: string # The standard of the MQTT topic
+  information_model: string # The information model used
+
+# Site, area, line, cell, equipment and sensor definitions
+site:
+  - name: string # Name of the site
+    id: string # ID of the site
+    location: string # Location of the site
+    description: string # Description of the site
+    area:
+      - name: string # Name of the area
+        id: string # ID of the area
+        location: string # Location of the area
+        description: string # Description of the area
+        line:
+          - name: Line US1 # Name of the line
+            id: LIS1 # ID of the line
+            location: string # Location of the line
+            description: string # Description of the line
+            cell:
+              - name: string # Name of the cell
+                id: string # ID of the cell
+                location: string # Location of the cell
+                description: string # Description of the cell
+                equipment:
+                  - name: string # Name of the equipment
+                    id: string # ID of the equipment
+                    <<: *template_equipment # Reference to the equipment template
+                    sensor:
+                      - name: string # Name of the sensor
+                        id: string # ID of the sensor
+                        <<: *template_sensor # Reference to the sensor template
+
+# Function configuration
+function:
+  - name: string # Name of the function
+    endpoint: string # URL (Uniform Resource Locator) of the function
+    description: string # Description of the function
+
+consumer:
+  - name: string # Name of the consumer
+    endpoint: string # URL (Uniform Resource Locator) of the consumer
+    description: string # Description of the consumer
+
+# Producer configuration
+producer:
+  - name: string # Name of the producer
+    endpoint: string # URL (Uniform Resource Locator) of the producer
+    description: string # Description of the producer
+
+# MQTT broker configuration
+mqtt:
+  broker:
+    host: string # Host of the MQTT broker
+    port: int # Port of the MQTT broker
+    username: string # Username for the MQTT broker
+    password: string # Password for the MQTT broker
+
+# Database configuration
+database:
+  timeseries:
+    host: string # Host of the database
+    port: int # Port of the database
+    username: string # Username for the database
+    password: string # Password for the database
+
+# Equipment and sensor templates
+template_equipment: &template_equipment
+  dataops:
+    normalization:
+      units: string # Units for normalization
+      scale: float # Scale for normalization
+      offset: float # Offset for normalization
+      method: string # Method for normalization
+      missing_values: 
+        strategy: string # Strategy for handling missing values
+        fill_value: string # Fill value for missing values
+    transformation:
+      aggregation:
+        method: string # Method for aggregation
+        window: int # Window for aggregation
+        stride: int # Stride for aggregation
+      calculation:
+        operation: string # Operation for calculation
+        operands: list # Operands for calculation
+      filtering:
+        method: string # Method for filtering
+        parameters: list # Parameters for filtering
+      feature_extraction:
+        method: string # Method for feature extraction
+        parameters: list # Parameters for feature extraction
+      dimensionality_reduction:
+        method: string # Method for dimensionality reduction
+        number_of_dimensions: int # Number of dimensions for dimensionality reduction
+        
+template_sensor: &template_sensor
+  information_model:
+    item: float # Sensor data item

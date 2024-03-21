@@ -1,0 +1,6 @@
+version: '1.0'
+
+consumer:
+  - name: string # Name of the consumer
+    endpoint: string # URL (Uniform Resource Locator) of the consumer
+    description: string # Description of the consumer
